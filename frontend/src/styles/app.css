@@ -1,0 +1,7 @@
+body { font-family: Arial, sans-serif; margin: 0; background: #f4f6fb; }
+.app { max-width: 960px; margin: 0 auto; padding: 20px; }
+.panel, .card { background: white; border-radius: 12px; padding: 14px; margin: 12px 0; box-shadow: 0 2px 6px rgba(0,0,0,.08); }
+.actions { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 8px; }
+button { border: none; background: #3b82f6; color: #fff; border-radius: 8px; padding: 8px 10px; cursor: pointer; }
+input, textarea { width: 100%; padding: 8px; margin: 6px 0; border-radius: 8px; border: 1px solid #d1d5db; }
+.error { color: #dc2626; }
