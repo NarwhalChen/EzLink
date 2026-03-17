@@ -82,7 +82,8 @@ async def draft_message(
 
     # Confidence scales with evaluation confidence but is capped lower because
     # template drafts are less reliable than LLM-generated ones.
-    confidence = max(10, evaluation.confidence // 2)
+    # TODO: LLM-based drafting will produce its own confidence scores.
+    confidence = max(5, round(evaluation.confidence * 0.75))
 
     logger.debug("Drafted message for %s.", candidate.name)
 
