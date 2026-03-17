@@ -9,11 +9,14 @@ DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./ezlink.db")
 
 EXPERIENCE_UPLOAD_DIR: str = os.getenv("EXPERIENCE_UPLOAD_DIR", "./uploads")
 
-# Optional LLM API key — required when replacing stub services with real LLM calls.
+# LLM API key — required for browser-use Agent.
 LLM_API_KEY: str | None = os.getenv("LLM_API_KEY")
+LLM_MODEL: str = os.getenv("LLM_MODEL", "gpt-4o")
 
-CORS_ORIGINS: list[str] = [
-    origin.strip()
-    for origin in os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",")
-    if origin.strip()
-]
+# Chrome executable path — used to reuse logged-in browser sessions.
+CHROME_PATH: str = os.getenv(
+    "CHROME_PATH",
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+)
+
+TELEGRAM_BOT_TOKEN: str = os.getenv("TELEGRAM_BOT_TOKEN", "")

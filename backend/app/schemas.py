@@ -88,8 +88,9 @@ class CreateSessionRequest(BaseModel):
 
 
 class CollectRequest(BaseModel):
-    profile_url: str
+    platform: str  # e.g. "linkedin", "github", "twitter"
     session_id: int
+    max_candidates: int = 5
 
 
 class UpdateDraftRequest(BaseModel):

@@ -4,9 +4,7 @@ from contextlib import asynccontextmanager
 from typing import AsyncGenerator
 
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 
-from app.config import CORS_ORIGINS
 from app.db import init_db
 from app.routes import collect, context, draft, evaluate, history, send, sessions
 from app.utils.logging import configure_logging, get_logger
@@ -32,14 +30,6 @@ app = FastAPI(
     ),
     version="0.1.0",
     lifespan=lifespan,
-)
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=CORS_ORIGINS,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
 )
 
 # --- Routers ---
